@@ -57,9 +57,9 @@ while True:
             time.sleep(1)
 
     if address_motor.axis0.current_state == 1:
-        print("MEMBERSIHKAN DOSA")
+        print("RESET MOTOR ERROR...")
         address_motor.clear_errors()
         address_motor.axis0.requested_state = 8
     else:
-        print("MEMULAI MOTOR")
+        print("STARTING MOTOR...")
         address_motor.axis0.controller.input_vel = velocity_motor
