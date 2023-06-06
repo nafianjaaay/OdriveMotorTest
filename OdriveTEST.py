@@ -15,8 +15,9 @@ RAMP_RATE = 100
 POS_GAIN = 35
 
 #-------------setup-------------#
+print("finding odrive...")
 address_motor = odrive.find_any()
-print("reset position...")
+print("odrive found! reset position...")
 address_motor.axis0.motor.config.current_control_bandwidth = BANDWIDTH
 address_motor.axis0.controller.config.vel_gain = KP_VALUE
 address_motor.axis0.controller.config.vel_integrator_gain = KI_VALUE 
@@ -33,6 +34,7 @@ address_motor.axis0.requested_state = AxisState.CLOSED_LOOP_CONTROL
 time.sleep(2)
 print("SETUP DONE!")
 time.sleep(1)
+start_liveplotter(lambda:[address_motor.axis0.encoder.shadow_count])
 
 #--starting speed--#
 velocity_motor = 10
