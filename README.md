@@ -6,6 +6,7 @@ Python program for testing motor on ODRIVE Driver with closed loop parameter set
 2.  Change direction of motor using keybind
 3.  Auto reset motor error when running
 4.  Incremental velocity with delay
+5.  Motor PID graphic with Matplotlib
 
 # Requirements
 1.  Python 3.x
